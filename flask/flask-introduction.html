@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Flask Tutorial for Beginners | Learn Flask Step by Step with X3School</title>
+
+  <meta name="description" content="X3School offers the best Flask tutorial for beginners. Learn Flask web development step by step, practice with our live compiler, get Flask code examples, and start building Python web apps today." />
+
+  <meta name="keywords" content="flask tutorial for beginners, learn flask step by step, flask code examples, flask full course, python web framework, flask routes, flask template, X3School flask introduction" />
+
+  <meta name="author" content="X3School" />
+  <meta name="google-site-verification" content="r05cmkjA1lRP0f2DXc1aFLOb7L4iykQDDcW2W7NG1kk" />
+
+  <meta property="og:title" content="Flask Tutorial for Beginners | X3School" />
+  <meta property="og:description" content="Master Flask installation, routes, templates, and start your first Python web projects with X3School's complete guide." />
+  <meta property="og:url" content="https://x3school.onrender.com/flask/introduction" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://x3schools.onrender.com/static/images/flask-tutorial-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learn Flask Step by Step | X3School" />
+  <meta name="twitter:description" content="Practice Flask basic routes, Jinja templates, and ORM with our live compiler. Perfect for Python beginners." />
+  <meta name="twitter:image" content="https://x3schools.onrender.com/static/images/flask-tutorial-banner.png" />
+
+  <link rel="canonical" href="https://x3school.onrender.com/flask/flask-introduction" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="../static/index.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Flask Tutorial for Beginners – Learn Python Flask Step by Step | X3School",
+  "description": "Complete Flask course by X3School to learn Flask from scratch. Covers installation, routes, Jinja templates, forms, ORM, and live compiler for hands-on practice. Best Flask tutorial for beginners.",
+  "provider": {
+    "@type": "Organization",
+    "name": "X3School",
+    "url": "https://x3school.in"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://x3school.in/images/programming.png",
+    "width": 1200,
+    "height": 675,
+    "caption": "Learn Flask Programming Online at X3School"
+  },
+  "keywords": [
+    "flask tutorial",
+    "learn flask",
+    "flask course",
+    "flask full course",
+    "python web development",
+    "flask for beginners",
+    "flask example",
+    "flask compiler online",
+    "flask coding practice",
+    "flask projects for beginners",
+    "backend development",
+    "python framework",
+    "flask routes",
+    "flask templates",
+    "jinja2 tutorial"
+  ],
+  "hasPart": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Flask?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flask is a lightweight Python web framework that provides tools and features to build web applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Flask a full-stack framework?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flask is often referred to as a micro-framework, meaning it focuses on core functionality and allows for flexibility by integrating various extensions for features like databases or user authentication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can beginners learn Flask fast?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beginners can learn Flask quickly by focusing on setting up basic routes, understanding the Jinja templating engine, and building small, guided projects step by step."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I practice Flask online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can practice core Flask concepts and basic Python code directly at X3School's live compiler to see instant results."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<style>
+  /* 🌐 General Page Setup */
+.html-main-content {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  line-height: 1.7;
+  background-color: #ffffff;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 30 16px;
+}
+
+h1, h2, h3 {
+  color: #0b3d91;
+  margin-bottom: 12px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #eee;
+  margin: 40px 0;
+}
+
+/* 🌟 Hero Intro Section */
+.hero-intro {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-intro h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hero-intro .summary-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.hero-intro img {
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 🎯 CTA Buttons */
+.cta-button,
+.secondary-cta {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.cta-button:hover {
+  background-color: #0056d2;
+}
+
+.secondary-cta {
+  color: #007bff;
+  margin-left: 12px;
+}
+
+.secondary-cta:hover {
+  color: #0056d2;
+}
+
+/* 🤔 What is Flask Section */
+.what-is-flask {
+  padding: 40px 20px;
+}
+
+.what-is-flask p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.what-is-flask blockquote {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-left: 4px solid #007bff;
+  font-style: italic;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* 💻 Live Flask/Python Compiler Section - IDE Theme */
+.flask-compiler-section {
+  padding: 40px 20px;
+  background: #282c34; /* Dark background for IDE theme */
+  border-radius: 15px;
+  color: #fff;
+}
+
+.flask-compiler-section h2, .flask-compiler-section h3 {
+    color: #61afef; /* Light blue for headings */
+}
+
+.compiler-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.code-editor-box,
+.output-preview-box {
+  flex: 1;
+  min-width: 300px;
+}
+
+#python-code-input {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #444;
+  font-family: 'Fira Code', monospace; /* Monospace font for code */
+  font-size: 1rem;
+  background-color: #1e2127; /* Darker background for editor */
+  color: #abb2bf; /* Light gray text */
+  resize: vertical;
+}
+
+#python-output-frame {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #1e2127;
+  color: #98c379; /* Greenish color for output text */
+  padding: 12px;
+  overflow: auto;
+  font-family: monospace;
+}
+
+.run-code-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #98c379; /* Greenish button */
+  color: #1e2127;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.run-code-button:hover {
+  background: #84b36c;
+}
+
+/* 📚 Essential Topics Section */
+.essential-topics {
+  padding: 40px 20px;
+}
+
+.essential-topics ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.essential-topics li {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.essential-topics a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.essential-topics a:hover {
+  text-decoration: underline;
+}
+
+/* 💡 Projects Section */
+.flask-projects {
+  padding: 40px 20px;
+  background: #f9fbff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-link {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  background-color: #0056d2;
+}
+
+/* 🎯 SEO Tips Section */
+.html-main-content section:last-of-type {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+}
+
+.html-main-content ul li {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .hero-intro h1 {
+    font-size: 1.6rem;
+  }
+  .compiler-container {
+    flex-direction: column;
+  }
+  .run-code-button {
+    width: 100%;
+  }
+  .cta-button,
+  .secondary-cta {
+    display: block;
+    margin: 10px auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="html-main-content">
+
+  <section class="hero-intro" style="text-align:center; padding:40px;">
+    <h1 id="main-heading">🐍 Learn Flask with X3School – Complete Python Framework Tutorial for Beginners</h1>
+    <p class="summary-text" style="max-width:800px; margin:auto; font-size:18px;">
+      Welcome to <strong>X3School</strong> – your guide to <b>learn Flask step by step</b>.
+      This full Flask guide covers every topic — from <b>installation</b> and <b>routes</b> to <b>Jinja templates</b>, <b>database integration</b>, and real-world <b>Flask projects for beginners</b>.
+      Start building Python web apps in our built-in <b>live Python compiler</b> today!
+    </p>
+
+
+    <div style="margin-top:20px;">
+      <a href="#compiler-section" class="cta-button" style="padding:10px 20px; background:#007bff; color:white; border-radius:8px; text-decoration:none;">🚀 Try Python Code Live Now!</a>
+      <a href="/flask/routes-examples" class="secondary-cta" style="margin-left:10px; color:#007bff;">🛣️ Flask Routes with Examples</a>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="what-is-flask" style="padding:40px;">
+    <h2>🤔 What is Flask in Web Development?</h2>
+    <p>
+      Flask is a **micro-framework** for Python. It is designed to make getting started with web development quick and easy, with the ability to scale up to complex applications.
+      Unlike full-stack frameworks, Flask provides a **minimal core**, letting you choose extensions for features like database connectivity and form validation.
+    </p>
+    <p>
+      If you already know Python, learning Flask is the most straightforward path to becoming a **backend web developer**.
+      You'll learn about **request handling**, **URL routing**, and how to render dynamic content using **Jinja templates**.
+    </p>
+    <blockquote style="background:#f8f9fa; padding:15px; border-left:4px solid #007bff;">
+      💡 Example: The classic "Hello World" application is just a few lines of Python code in Flask.
+    </blockquote>
+  </section>
+
+  <hr>
+
+  <section id="compiler-section" class="flask-compiler-section" style="padding:40px;">
+    <h2>💻 Flask Code Examples – Practice with Live Python Compiler (IDE Theme)</h2>
+    <p style="color: #abb2bf;">
+      Since Flask runs on a server, this live compiler lets you practice the **core Python logic** and concepts you'll use in your Flask routes. Write your Python code, click “Run Code”, and see the output in real time.
+    </p>
+
+    <div class="compiler-container" style="display:flex; flex-wrap:wrap; gap:20px;">
+      <div class="code-editor-box" style="flex:1; min-width:300px;">
+        <h3>✏️ Input (Write Your Python Logic)</h3>
+        <textarea id="python-code-input" rows="10" style="width:100%; height:250px; padding:10px; border-radius:10px;">
+# A simple Python example for your Flask logic
+def greet(name):
+    return f"Hello, {name} from Flask Backend!"
+
+print(greet("X3School Learner"))
+        </textarea>
+      </div>
+
+      <div class="output-preview-box" style="flex:1; min-width:300px;">
+        <h3>🧭 Output (Console Output)</h3>
+        <pre id="python-output-frame" style="width:100%; height:250px; border:1px solid #444; border-radius:10px;"></pre>
+      </div>
+    </div>
+    <button onclick="runPythonCode()" class="run-code-button" style="margin-top:20px; padding:10px 20px;">▶️ Run Code</button>
+  </section>
+
+  <hr>
+
+  <section class="essential-topics" style="padding:40px;">
+    <h2>📚 Essential Flask Topics and Extensions You Must Learn</h2>
+    <p>
+      To build a complete application, focus on these core Flask concepts and popular extensions:
+    </p>
+    <ul style="line-height:2;">
+      <li><a href="/flask/routes">🛣️ Flask Routes and Views</a> – Learn how to define URLs and functions to handle them.</li>
+      <li><a href="/flask/templates">📜 Jinja Templating</a> – Understand how to render dynamic HTML pages.</li>
+      <li><a href="/flask/forms">📝 Flask-WTF Forms</a> – How to manage web forms and handle user input securely.</li>
+      <li><a href="/flask/database">💾 Flask-SQLAlchemy (ORM)</a> – Integrate databases (SQLite, PostgreSQL, etc.) easily.</li>
+      <li><a href="/flask/projects">💼 Flask Projects for Beginners</a> – Build real-world mini-projects to master Flask.</li>
+    </ul>
+    <p>
+      Download our free <a href="/downloads/flask-notes.pdf">Flask Notes PDF</a> and start your journey to become a professional Python web developer.
+      Enroll now in the **best Flask course online** at X3School!
+    </p>
+  </section>
+
+  <hr>
+
+  <section class="flask-projects" style="padding:40px;">
+    <h2>💡 Build Real Flask Projects for Practice</h2>
+    <p>
+      Apply your learning by building practical applications. Create a **simple blog**, a **to-do list manager**, or a **user authentication system**.
+      The best way to learn is by doing—start combining Flask routes, templates, and database models today!
+    </p>
+    <a href="/flask/project-list" class="cta-button project-link" style="padding:10px 20px; background:#007bff; color:white; border-radius:8px; text-decoration:none;">View All Flask Projects</a>
+  </section>
+
+  <hr>
+
+  <section style="padding:40px;">
+    <h2>🎯 On-Page SEO Tips for this Flask Tutorial</h2>
+    <ul style="line-height:1.8;">
+      <li>Target high-intent keywords in the heading like "**Flask Tutorial**," "**Python Web Framework**."</li>
+      <li>Internally link to related Python topics (e.g., Python Basics → Flask → Django).</li>
+      <li>Use the **Code Compiler** section to enhance user engagement metrics.</li>
+    </ul>
+  </section>
+
+</main>
+
+<script>
+  // NOTE: A true Flask/Python compiler requires a backend server.
+  // This client-side function simulates console output for basic Python concepts.
+  // In a real application, this would send code to a server-side execution environment.
+  function runPythonCode() {
+    const code = document.getElementById('python-code-input').value;
+    const outputFrame = document.getElementById('python-output-frame');
+
+    // Simple simulation (cannot run real Python/Flask in the browser for security)
+    if (code.includes('print(')) {
+        // Attempt to extract the content of the print function for a mock output
+        const match = /print\((.+?)\)/g.exec(code);
+        let mockOutput = 'Server Simulation: Running Python code...\n';
+
+        if (match && match.length > 1) {
+            let printContent = match[1].trim();
+
+            // Simple substitution for f-strings simulation
+            if (printContent.startsWith('f"') || printContent.startsWith("f'")) {
+                 printContent = printContent.replace(/f['"]|['"]/g, ''); // Remove f-string markers
+                 printContent = printContent.replace(/\{(\w+)\}/g, 'X3School Learner'); // Replace variable calls
+            } else {
+                 printContent = printContent.replace(/['"]/g, ''); // Remove simple quotes
+            }
+
+
+            mockOutput += printContent;
+        } else {
+            mockOutput += 'Logic executed. Check the console for full output (in a real environment).';
+        }
+         outputFrame.textContent = mockOutput;
+
+    } else {
+        outputFrame.textContent = 'Server Simulation: Code executed. No print statement found to display output.';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', runPythonCode);
+</script>
+
+  <section class="video-section">
+    <h2>🎥 Flask Full Video Tutorial</h2>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/Z1ktxiqM2P0"
+        title="Flask Full Course - Build a Web Application Tutorial"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+      <section id="programming-image-section" style="padding:24px 16px;display:flex;justify-content:center;align-items:center;background:#f9fafb;">
+  <figure style="max-width:1200px;width:100%;margin:0;display:block;">
+    <img
+      src="/static/images/programming.png"
+      srcset="
+        /static/images/programming.png 480w,
+        /static/images/programming.png 800w,
+        /static/images/programming.png 1200w
+      "
+      sizes="(max-width:600px) 90vw, (max-width:1200px) 80vw, 1200px"
+      alt="Programming tutorials: Learn Python, Flask, HTML, CSS, JavaScript — projects, interview prep | X3School"
+      title="Programming tutorials and projects - X3School"
+      width="1200"
+      height="675"
+      loading="lazy"
+      style="display:block;max-width:100%;height:auto;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.08);border:1px solid rgba(0,0,0,0.04);"
+    />
+
+    <figcaption style="text-align:center;padding:10px 8px;margin-top:8px;font-size:0.95rem;color:#3b3b3b;">
+      Start learning: Python · Flask · HTML · CSS — Free projects & interview prep at X3School
+    </figcaption>
+  </figure>
+</section>
+
+<div id="footer-placeholder"></div>
+
+  <script src="/static/index.js"></script>
+</body>
+  </html>
