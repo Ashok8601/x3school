@@ -278,7 +278,43 @@
       </iframe>
     </div>
   </section>
+      <!-- SEO-optimized Image Section (inline CSS) -->
+<section id="programming-image-section" style="padding:24px 16px;display:flex;justify-content:center;align-items:center;background:#f9fafb;">
+  <figure style="max-width:1200px;width:100%;margin:0;display:block;">
+    <!-- Responsive image with srcset + lazy loading + fixed dims to avoid CLS -->
+    <img
+      src="/static/images/programming.png"
+      srcset="/static/images/programming-480.webp 480w, /static/images/programming-800.webp 800w, /static/images/programming.png 1200w"
+      sizes="(max-width:600px) 90vw, (max-width:1200px) 80vw, 1200px"
+      alt="Programming tutorials: Learn Python, HTML, CSS, JavaScript — projects, interview prep | X3School"
+      title="Programming tutorials and projects - X3School"
+      width="1200"
+      height="675"
+      loading="lazy"
+      style="display:block;max-width:100%;height:auto;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.08);border:1px solid rgba(0,0,0,0.04);"
+    />
 
+    <!-- SEO friendly caption (visible to users & crawlers) -->
+    <figcaption style="text-align:center;padding:10px 8px;margin-top:8px;font-size:0.95rem;color:#3b3b3b;">
+      Start learning: Python · HTML · CSS · JavaScript — Free projects & interview prep at X3School
+    </figcaption>
+  </figure>
+</section>
+
+<!-- JSON-LD ImageObject (put this inside <head> or right after the image) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://x3school.onrender.com/static/images/programming.png",
+  "thumbnail": "https://x3school.onrender.com/static/images/programming-480.webp",
+  "representativeOfPage": true,
+  "caption": "Programming tutorials — Learn Python, HTML, CSS, JavaScript with projects and interview prep at X3School",
+  "name": "Programming Tutorials - X3School",
+  "width": 1200,
+  "height": 675
+}
+</script>
   </main>
   </main>
 
