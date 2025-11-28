@@ -1,4 +1,3 @@
-Certainly\! Here is the best interactive and informative **`README.md`** file for your **x3school** project, translated and polished for professional English documentation.
 
 -----
 
