@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Ashok Kumar | HTML CSS Projects</title>
+  <link>https://x3school.onrender.com/designs/</link>
+  <description>Latest HTML, CSS, and Animation projects with source code for developers.</description>
+  <language>en-us</language>
+  
+  <item>
+    <title>Project #4: Dynamic UI Components</title>
+    <link>https://x3school.onrender.com/designs/</link>
+    <description>New interactive navigation bars and glassmorphism effects added.</description>
+    <pubDate>Tue, 23 Dec 2025 12:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Project #1: Professional About Page</title>
+    <link>https://x3school.onrender.com/designs/</link>
+    <description>Clean corporate About Us page with source code.</description>
+    <pubDate>Mon, 22 Dec 2025 10:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
