@@ -1,139 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ashok Kumar | GitHub Code Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Top 1000 HTML CSS Projects with Source Code | Web Design & Animations</title>
+    <meta name="description" content="Explore professional HTML CSS projects for interviews. Get free source code for web designs, UI animations, and responsive layouts. Practice coding live.">
+    <meta name="keywords" content="HTML CSS projects, Source Code, Interview Projects, Web Design, CSS Animation, Live Coding, Frontend Portfolio">
+    <link rel="canonical" href="https://x3school.onrender.com/designs/">
 
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f2f2f2;
-}
-header{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-section{
-    max-width:1000px;
-    margin:auto;
-    padding:30px;
-}
-.project-card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:25px;
-}
-button{
-    padding:8px 15px;
-    background:#111;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    margin-top:10px;
-}
-.code-box{
-    display:none;
-    margin-top:15px;
-}
-textarea{
-    width:100%;
-    height:220px;
-    background:#1e1e1e;
-    color:#00ffcc;
-    font-family:monospace;
-    padding:10px;
-    border-radius:5px;
-    border:none;
-}
-iframe{
-    width:100%;
-    height:220px;
-    margin-top:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
-.note{
-    font-size:14px;
-    color:#555;
-}
-</style>
+    <link rel="alternate" type="application/rss+xml" title="Ashok Kumar | New Code Projects" href="https://x3school.onrender.com/rss.xml">
+
+    <style>
+        :root { --dark: #111; --accent: #00ffcc; --light: #f4f7f6; --rss-orange: #f26522; --gemini-blue: #4285f4; }
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: var(--light); color: #333; line-height: 1.6; }
+        
+        /* Floating Subscribe Box */
+        #rss-float { position: fixed; right: 15px; top: 50%; transform: translateY(-50%); z-index: 9999; }
+        .rss-content { background: #fff; padding: 8px 12px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 2px solid var(--rss-orange); text-align: center; width: fit-content; }
+        .rss-link { display: inline-block; background: var(--rss-orange); color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 11px; transition: 0.2s; }
+
+        header { background: var(--dark); color: white; text-align: center; padding: 60px 20px; }
+        header h1 { font-size: 2.8rem; margin: 0; letter-spacing: 1px; }
+        header p { color: #bbb; margin-top: 10px; font-size: 1.2rem; }
+
+        /* Search Bar Fix (Mobile Friendly) */
+        .search-container { margin: 20px auto 40px auto; text-align: center; padding: 0 15px; width: 100%; box-sizing: border-box; }
+        #projectSearch { 
+            width: 100%; 
+            max-width: 600px; 
+            padding: 15px 25px; 
+            font-size: 1.1rem; 
+            border: 2px solid #ddd; 
+            border-radius: 50px; 
+            outline: none; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-sizing: border-box; /* Ensures padding doesn't push width outside screen */
+        }
+        #projectSearch:focus { border-color: var(--gemini-blue); box-shadow: 0 4px 20px rgba(66, 133, 244, 0.2); }
+
+        main { max-width: 1000px; margin: 30px auto; padding: 0 20px; min-height: 50vh; }
+        
+        .section-title { font-size: 2rem; border-bottom: 3px solid var(--accent); display: inline-block; margin-bottom: 30px; }
+
+        .project-card { background: white; padding: 30px; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; }
+        .project-number { position: absolute; top: -15px; left: 20px; background: var(--dark); color: var(--accent); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 1.2rem; }
+        
+        h3 { margin-top: 10px; color: var(--dark); }
+        .project-desc { color: #666; font-size: 1rem; margin-bottom: 20px; }
+
+        button.view-btn { padding: 12px 25px; background: var(--dark); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        button.view-btn:hover { background: #333; }
+        
+        .code-box { display: none; margin-top: 20px; animation: slideDown 0.4s ease-out; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        textarea { width: 100%; height: 250px; background: #1e1e1e; color: var(--accent); font-family: 'Consolas', monospace; padding: 15px; border-radius: 8px; border: none; box-sizing: border-box; resize: vertical; }
+        
+        .action-bar { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+        button.run-btn { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button.ai-btn { padding: 10px 20px; background: var(--gemini-blue); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 5px; }
+
+        .ai-output { background: #eef4ff; border-left: 4px solid var(--gemini-blue); padding: 15px; margin-top: 15px; border-radius: 4px; display: none; font-size: 0.95rem; white-space: pre-wrap; }
+        iframe.preview-frame { width: 100%; height: 450px; border: 2px solid #ddd; border-radius: 8px; margin-top: 15px; background: white; }
+
+        /* Video Section Bottom */
+        .video-section { background: white; padding: 50px 20px; border-top: 1px solid #eee; margin-top: 50px; }
+        .hero-section h2 { margin-top: 0; color: var(--dark); text-align: center; }
+        .video-wrapper { 
+            max-width: 800px;
+            margin: 20px auto 0;
+            aspect-ratio: 16/9; 
+            background: #000; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+        footer { background: var(--dark); color: white; text-align: center; padding: 50px 20px; }
+
+        @media (max-width: 900px) {
+            #rss-float { top: auto; bottom: 20px; transform: none; right: 10px; }
+            header h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
-
 <body>
 
+<aside id="rss-float">
+    <div class="rss-content">
+        <h3>Subscribe to X3School</h3>
+        <a href="rss.xml" class="rss-link">RSS Feed</a>
+    </div>
+</aside>
+
 <header>
-    <h1>Ashok Kumar</h1>
-    <p>GitHub Powered Live Code Portfolio</p>
+    <h1>Ashok Kumar | Code Lab</h1>
+    <p>Professional HTML, CSS, and Animation Projects with AI Insights</p>
+    <div class="search-container">
+        <input type="text" id="projectSearch" placeholder="Search projects by name or number (e.g. #1 or About)..." onkeyup="filterProjects()">
+    </div>
 </header>
 
-<section>
+<main>
+    <h2 class="section-title">Projects with Source Code</h2>
 
-<div class="project-card">
-    <h2>HTML Design from GitHub</h2>
-    <p>This project runs directly from GitHub repo</p>
+    <article class="project-card" id="p1">
+        <div class="project-number">#1</div>
+        <h3>Professional About Us Page</h3>
+        <p class="project-desc">A modern and semantic "About Us" section. Optimized for SEO and clean code standards.</p>
+        
+        <button class="view-btn" onclick="loadFromGitHub(this)" 
+        data-url="https://raw.githubusercontent.com/Ashok8601/Syistgroup/main/about.html">
+            View Source Code
+        </button>
 
-    <!-- 👇 RAW GitHub FILE URL -->
-    <button onclick="loadFromGitHub(this)"
-    data-url="https://raw.githubusercontent.com/Ashok8601/Syistgroup/main/about.html">
-        View Code
-    </button>
+        <div class="code-box">
+            <textarea spellcheck="false"></textarea>
+            <div class="action-bar">
+                <button class="run-btn" onclick="runCode(this)">Run & Preview</button>
+                <button class="ai-btn" onclick="explainCode(this)">✨ Explain Code</button>
+                <button class="ai-btn" style="background: #6200ea;" onclick="improveCode(this)">✨ AI Improve</button>
+            </div>
+            <div class="ai-output"></div>
+            <iframe class="preview-frame" title="Project 1 Preview"></iframe>
+        </div>
+    </article>
 
-    <div class="code-box">
-        <textarea></textarea><br>
-        <button onclick="runCode(this)">Run Code</button>
-        <iframe></iframe>
+    <article class="project-card" id="p2">
+        <div class="project-number">#2</div>
+        <h3>Interactive CSS Hover Animations</h3>
+        <p class="project-desc">Advanced CSS keyframe animations that enhance user experience.</p>
+        
+        <button class="view-btn" onclick="loadFromGitHub(this)" 
+        data-url="https://raw.githubusercontent.com/Ashok8601/Syistgroup/main/about.html">
+            View Source Code
+        </button>
+
+        <div class="code-box">
+            <textarea spellcheck="false"></textarea>
+            <div class="action-bar">
+                <button class="run-btn" onclick="runCode(this)">Run & Preview</button>
+                <button class="ai-btn" onclick="explainCode(this)">✨ Explain Code</button>
+            </div>
+            <div class="ai-output"></div>
+            <iframe class="preview-frame" title="Project 2 Preview"></iframe>
+        </div>
+    </article>
+</main>
+
+<section class="video-section">
+    <div class="hero-section">
+        <h2>Watch Project Walkthroughs</h2>
+        <p style="text-align:center;">Master web technologies with step-by-step video tutorials. Use ✨ Gemini AI to learn faster!</p>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0" title="Project Tutorial Video" allowfullscreen></iframe>
+        </div>
     </div>
-
-    <p class="note">
-        ⚠ Repo must be PUBLIC & HTML file must contain inline CSS & JS
-    </p>
-</div>
-
 </section>
 
 <footer>
-    © 2025 Ashok Kumar
+    <p><strong>Ashok Kumar - X3School Designs 2025</strong></p>
+    <p>Powered by Gemini AI for Smarter Learning.</p>
 </footer>
 
 <script>
+// Gemini API Configuration
+const apiKey = ""; 
+const GEMINI_MODEL = "gemini-2.5-flash-preview-09-2025";
+
+async function callGemini(prompt) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: "You are an expert web developer. Explain code simply or suggest improvements." }] }
+            })
+        });
+        const result = await response.json();
+        return result.candidates?.[0]?.content?.parts?.[0]?.text || "No response.";
+    } catch (e) { return "Error: Unable to reach AI."; }
+}
+
+async function explainCode(btn) {
+    const box = btn.closest('.code-box');
+    const code = box.querySelector('textarea').value;
+    const output = box.querySelector('.ai-output');
+    btn.disabled = true; btn.innerText = "✨ Thinking...";
+    output.style.display = "block"; output.innerText = "Analyzing code...";
+    const explanation = await callGemini(`Explain this code simply: \n\n ${code}`);
+    output.innerText = explanation; btn.disabled = false; btn.innerText = "✨ Explain Code";
+}
+
+async function improveCode(btn) {
+    const box = btn.closest('.code-box');
+    const code = box.querySelector('textarea').value;
+    const output = box.querySelector('.ai-output');
+    btn.disabled = true; btn.innerText = "✨ Optimizing...";
+    output.style.display = "block"; output.innerText = "Suggesting improvements...";
+    const improvement = await callGemini(`Suggest improvements for this code: \n\n ${code}`);
+    output.innerText = improvement; btn.disabled = false; btn.innerText = "✨ AI Improve";
+}
+
+// Toggle & Github Logic
 function loadFromGitHub(btn){
     const url = btn.getAttribute("data-url");
     const box = btn.nextElementSibling;
     const textarea = box.querySelector("textarea");
 
-    box.style.display = "block";
-    textarea.value = "Loading code from GitHub...";
+    // Toggle behavior
+    if (box.style.display === "block") {
+        box.style.display = "none";
+        btn.innerText = "View Source Code";
+        return;
+    }
 
-    fetch(url)
-    .then(res => {
-        if(!res.ok) throw new Error("Fetch failed");
-        return res.text();
-    })
-    .then(code => {
-        textarea.value = code;
-    })
-    .catch(err => {
-        textarea.value = "❌ Unable to load file.\nCheck:\n- Repo is PUBLIC\n- RAW URL is correct";
-    });
+    box.style.display = "block";
+    btn.innerText = "Close Source Code";
+
+    if(textarea.value === "") {
+        textarea.value = "Fetching live source code...";
+        fetch(url)
+        .then(res => res.text())
+        .then(code => {
+            textarea.value = code;
+            runCode(box.querySelector(".run-btn"));
+        })
+        .catch(() => { textarea.value = "❌ Error loading code."; });
+    }
 }
 
 function runCode(btn){
-    const box = btn.parentElement;
+    const box = btn.closest('.code-box');
     const code = box.querySelector("textarea").value;
-    const iframe = box.querySelector("iframe");
+    box.querySelector("iframe").srcdoc = code;
+}
 
-    iframe.srcdoc = code;
+function filterProjects() {
+    const input = document.getElementById('projectSearch').value.toLowerCase();
+    const projects = document.getElementsByClassName('project-card');
+    for (let i = 0; i < projects.length; i++) {
+        const card = projects[i];
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? "" : "none";
+    }
 }
 </script>
 
