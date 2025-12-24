@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X3School | Learn Coding Online – Python, Web Development, Interview Prep</title><!-- SEO Meta Tags -->
+<meta name="description" content="X3School – Learn Coding, Python, Web Development, HTML, CSS, JavaScript, Django, Flask & Interview Preparation. Follow us on YouTube, Instagram, Facebook & Telegram.">
+<meta name="keywords" content="X3School, coding, learn programming, python tutorial, web development, html css javascript, django, flask, coding interview, x3school youtube">
+<meta name="author" content="Ashok Kumar">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://x3school.onrender.com/x3school" />
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://youtube.com/@x3school#person",
+      "name": "Ashok Kumar",
+      "url": "https://youtube.com/@x3school",
+      "image": "profile.jpg",
+      "jobTitle": "Software Developer and Coding Educator",
+      "knowsAbout": [
+        "Python Programming",
+        "Web Development",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Django",
+        "Flask",
+        "Coding Interview Preparation"
+      ],
+      "sameAs": [
+        "https://youtube.com/@x3school?si=nZvwTkCGDnkgC17-",
+        "https://www.instagram.com/x3school_codes?igsh=MTJqODhkdXlyejg4OQ==",
+        "https://www.facebook.com/share/16XmXtA3cH/",
+        "https://telegram.org/dl"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://youtube.com/@x3school#organization",
+      "name": "X3School",
+      "url": "https://youtube.com/@x3school",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "profile.jpg"
+      },
+      "description": "X3School is an online coding education platform providing tutorials on Python, Web Development, and coding interview preparation.",
+      "founder": {
+        "@id": "https://youtube.com/@x3school#person"
+      },
+      "sameAs": [
+        "https://youtube.com/@x3school?si=nZvwTkCGDnkgC17-",
+        "https://www.instagram.com/x3school_codes?igsh=MTJqODhkdXlyejg4OQ==",
+        "https://www.facebook.com/share/16XmXtA3cH/",
+        "https://telegram.org/dl"
+      ]
+    },
+    {
+      "@type": "VideoChannel",
+      "@id": "https://youtube.com/@x3school#youtube",
+      "name": "X3School YouTube Channel",
+      "url": "https://youtube.com/@x3school",
+      "description": "YouTube channel for X3School covering Python, Web Development, projects, and coding interview preparation.",
+      "publisher": {
+        "@id": "https://youtube.com/@x3school#organization"
+      }
+    },
+    {
+      "@type": "SocialMediaProfile",
+      "name": "X3School Instagram",
+      "url": "https://www.instagram.com/x3school_codes?igsh=MTJqODhkdXlyejg4OQ=="
+    },
+    {
+      "@type": "SocialMediaProfile",
+      "name": "X3School Facebook",
+      "url": "https://www.facebook.com/share/16XmXtA3cH/"
+    },
+    {
+      "@type": "SocialMediaProfile",
+      "name": "X3School Telegram",
+      "url": "https://telegram.org/dl"
+    }
+  ]
+}
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI', Arial, sans-serif;
+    }
+    body{
+        background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+        color:#fff;
+    }
+    .container{
+        max-width:900px;
+        margin:auto;
+        padding:30px 20px;
+        text-align:center;
+    }
+    .profile-img{
+        width:160px;
+        height:160px;
+        border-radius:50%;
+        border:5px solid #00e5ff;
+        object-fit:cover;
+        margin-bottom:20px;
+    }
+    h1{
+        font-size:2.5rem;
+        margin-bottom:10px;
+        color:#00e5ff;
+    }
+    h2{
+        font-size:1.4rem;
+        margin-bottom:20px;
+        color:#ffdd57;
+    }
+    .about{
+        background:rgba(255,255,255,0.1);
+        padding:20px;
+        border-radius:15px;
+        margin-bottom:30px;
+        line-height:1.7;
+        font-size:1.05rem;
+    }
+    .about strong{color:#00e5ff;}
+    .social-links{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:20px;
+    }
+    .card{
+        background:rgba(0,0,0,0.35);
+        padding:20px;
+        border-radius:15px;
+        transition:0.3s;
+    }
+    .card:hover{
+        transform:translateY(-8px);
+        box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+    .card i{
+        font-size:2.5rem;
+        margin-bottom:10px;
+    }
+    .youtube i{color:#ff0000;}
+    .instagram i{color:#e1306c;}
+    .facebook i{color:#1877f2;}
+    .telegram i{color:#2aabee;}
+    .card h3{
+        margin-bottom:10px;
+        font-size:1.3rem;
+    }
+    .card p{
+        font-size:0.95rem;
+        margin-bottom:15px;
+        opacity:0.9;
+    }
+    .btn{
+        display:inline-block;
+        padding:10px 22px;
+        background:#00e5ff;
+        color:#000;
+        text-decoration:none;
+        border-radius:25px;
+        font-weight:600;
+        transition:0.3s;
+    }
+    .btn:hover{
+        background:#ffdd57;
+        color:#000;
+    }
+    footer{
+        margin-top:40px;
+        font-size:0.9rem;
+        opacity:0.85;
+    }
+    footer span{color:#00e5ff;}
+</style>
+
+</head>
+<body><div class="container"><!-- Profile Photo -->
+<!-- Replace profile.jpg with your own image -->
+<img src="profile.jpg" alt="Ashok Kumar X3School" class="profile-img">
+
+<h1>X3School</h1>
+<h2>Learn Coding • Build Projects • Crack Interviews</h2>
+
+<!-- About Section -->
+<div class="about">
+    <p>
+        Welcome to <strong>X3School</strong> 🚀<br>
+        I am <strong>Ashok Kumar</strong>, a passionate developer & educator.
+        Here you will learn <strong>Python, HTML, CSS, JavaScript, Django, Flask</strong>,
+        real-world <strong>coding projects</strong>, and <strong>coding interview preparation</strong>.
+        My mission is to make coding <strong>simple, practical, and career-focused</strong>.
+    </p>
+</div>
+
+<!-- Social Media Links -->
+<div class="social-links">
+
+    <div class="card youtube">
+        <i class="fab fa-youtube"></i>
+        <h3>YouTube</h3>
+        <p>Free coding tutorials, projects & interview questions.</p>
+        <a class="btn" href="https://youtube.com/@x3school?si=nZvwTkCGDnkgC17-" target="_blank">Subscribe</a>
+    </div>
+
+    <div class="card instagram">
+        <i class="fab fa-instagram"></i>
+        <h3>Instagram</h3>
+        <p>Short coding tips, reels & daily motivation.</p>
+        <a class="btn" href="https://www.instagram.com/x3school_codes?igsh=MTJqODhkdXlyejg4OQ==" target="_blank">Follow</a>
+    </div>
+
+    <div class="card facebook">
+        <i class="fab fa-facebook"></i>
+        <h3>Facebook</h3>
+        <p>Community updates & coding discussions.</p>
+        <a class="btn" href="https://www.facebook.com/share/16XmXtA3cH/" target="_blank">Join</a>
+    </div>
+
+    <div class="card telegram">
+        <i class="fab fa-telegram"></i>
+        <h3>Telegram</h3>
+        <p>Notes, resources & direct coding help.</p>
+        <a class="btn" href="https://telegram.org/dl" target="_blank">Join Now</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2025 <span>X3School</span> | Learn Coding with Confidence 💻</p>
+</footer>
+
+</div></body>
+</html>
